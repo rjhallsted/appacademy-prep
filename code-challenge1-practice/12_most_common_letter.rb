@@ -8,12 +8,12 @@ def most_common_letter(string)
   letters = Array.new
   counts = Array.new
   string.split('').each do |x|
-    unless letters.include? x
-      letters.push x
-      counts.push 1
-    else
+    if letters.include? x
       index = letters.index x
       counts[index] += 1
+    else
+      letters.push x
+      counts.push 1
     end
   end
 
